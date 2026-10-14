@@ -1,0 +1,410 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="The Adobe Sign Services API follows a microservice architecture that enables Adobe Sign into any part of an application and is built on the JSON API specification, follows predictable REST URLs, and ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="dita"/><meta name="DC.subject" content="adobe-sign-services-api,rest-api-framework,jsonapi-endpoints,e-signature-platform,agreement-workflow-api,adobe-sign-integration-services,api-request-handling,resource-model-definition,signature-orchestration,authentication-flow,agreement-transaction-processing,restful-communication,enterprise-software,revenue-lifecycle-management,digital-contract-execution,cloud-integration-environment,api-driven-operations,e-signature-ecosystem,json-api,rest-api,microservice-architecture,cors-support,web-api-framework,api-integration,authentication-workflow,request-routing,response-handling,resource-modeling,error-handling,digital-signing,application-integration,web-environment,cloud-services,salesforce-rest-endpoint,apex-rest-service,echosign-integration,agreement-service-endpoint,web-api-endpoint,endpoint-configuration,request-dispatching,signature-workflow-routing,agreement-processing,url-path-resolution,integration-binding,digital-signature-operations,salesforce-environment,cloud-integration,external-application-invocation,api-versioning-system,version-controlled-endpoints,compatibility-framework,api-lifecycle-management,service-version-controller,backward-compatibility,breaking-change-isolation,endpoint-version-mapping,api-change-management,feature-versioning-process,structured-api-evolution,digital-signature-services,cloud-platform-versioning,long-term-api-stability,integration-governance,metR-asign-power,power-adobe-sign-services,api-gateway,http-endpoint,web-client,integration-service,request-header-validation,content-type-check,api-request-formatting,json-payload-handling,http-protocol-processing,contract-signing-workflow,web-service-interaction,api-communication-environment,backend-service-integration,resource-relationship-api,jsonapi-includes,rest-resource-model,reference-expansion-framework,api-data-linking-engine,resource-inclusion,relationship-resolution,top-level-resource-mapping,comma-delimited-parsing,linked-resource-expansion,request-include-optimization,digital-signature-ecosystem,api-data-modeling,integration-architecture,structured-resource-environment,metr-asign-power,server-cache-engine,api-gateway-cache-layer,web-runtime-services,performance-optimization-module,server-side-caching,cache-strategy-configuration,query-parameter-handling,request-level-cache-control,response-optimization,runtime-cache-evaluation,api-performance-context,web-service-workloads,backend-optimization-environment,salesforce-integration-api,openapi-3-specification,e-signature-service,agreement-processing-api,oauth2-authentication-endpoint,error-handling-framework,response-validation,http-status-interpretation,request-schema-validation,signature-request-workflow,recipient-mapping-process,digital-signature-automation,api-error-observability,salesforce-oauth-environment"/><meta name="DC.subject" content="adobe-sign-services-api,rest-api-framework,jsonapi-endpoints,e-signature-platform,agreement-workflow-api,adobe-sign-integration-services,api-request-handling,resource-model-definition,signature-orchestration,authentication-flow,agreement-transaction-processing,restful-communication,enterprise-software,revenue-lifecycle-management,digital-contract-execution,cloud-integration-environment,api-driven-operations,e-signature-ecosystem,json-api,rest-api,microservice-architecture,cors-support,web-api-framework,api-integration,authentication-workflow,request-routing,response-handling,resource-modeling,error-handling,digital-signing,application-integration,web-environment,cloud-services,salesforce-rest-endpoint,apex-rest-service,echosign-integration,agreement-service-endpoint,web-api-endpoint,endpoint-configuration,request-dispatching,signature-workflow-routing,agreement-processing,url-path-resolution,integration-binding,digital-signature-operations,salesforce-environment,cloud-integration,external-application-invocation,api-versioning-system,version-controlled-endpoints,compatibility-framework,api-lifecycle-management,service-version-controller,backward-compatibility,breaking-change-isolation,endpoint-version-mapping,api-change-management,feature-versioning-process,structured-api-evolution,digital-signature-services,cloud-platform-versioning,long-term-api-stability,integration-governance,metR-asign-power,power-adobe-sign-services,api-gateway,http-endpoint,web-client,integration-service,request-header-validation,content-type-check,api-request-formatting,json-payload-handling,http-protocol-processing,contract-signing-workflow,web-service-interaction,api-communication-environment,backend-service-integration,resource-relationship-api,jsonapi-includes,rest-resource-model,reference-expansion-framework,api-data-linking-engine,resource-inclusion,relationship-resolution,top-level-resource-mapping,comma-delimited-parsing,linked-resource-expansion,request-include-optimization,digital-signature-ecosystem,api-data-modeling,integration-architecture,structured-resource-environment,metr-asign-power,server-cache-engine,api-gateway-cache-layer,web-runtime-services,performance-optimization-module,server-side-caching,cache-strategy-configuration,query-parameter-handling,request-level-cache-control,response-optimization,runtime-cache-evaluation,api-performance-context,web-service-workloads,backend-optimization-environment,salesforce-integration-api,openapi-3-specification,e-signature-service,agreement-processing-api,oauth2-authentication-endpoint,error-handling-framework,response-validation,http-status-interpretation,request-schema-validation,signature-request-workflow,recipient-mapping-process,digital-signature-automation,api-error-observability,salesforce-oauth-environment"/><meta name="keywords" content="adobe-sign-services-api, rest-api-framework, jsonapi-endpoints, e-signature-platform, agreement-workflow-api, adobe-sign-integration-services, api-request-handling, resource-model-definition, signature-orchestration, authentication-flow, agreement-transaction-processing, restful-communication, enterprise-software, revenue-lifecycle-management, digital-contract-execution, cloud-integration-environment, api-driven-operations, e-signature-ecosystem, adobe-sign-services-api, json-api, rest-api, microservice-architecture, cors-support, web-api-framework, api-integration, authentication-workflow, request-routing, response-handling, resource-modeling, error-handling, enterprise-software, revenue-lifecycle-management, digital-signing, application-integration, web-environment, cloud-services, adobe-sign-services-api, salesforce-rest-endpoint, apex-rest-service, echosign-integration, agreement-service-endpoint, web-api-endpoint, endpoint-configuration, request-dispatching, signature-workflow-routing, agreement-processing, url-path-resolution, integration-binding, enterprise-software, revenue-lifecycle-management, digital-signature-operations, salesforce-environment, cloud-integration, external-application-invocation, adobe-sign-services-api, api-versioning-system, version-controlled-endpoints, compatibility-framework, api-lifecycle-management, service-version-controller, backward-compatibility, breaking-change-isolation, endpoint-version-mapping, api-change-management, feature-versioning-process, structured-api-evolution, enterprise-software, revenue-lifecycle-management, digital-signature-services, cloud-platform-versioning, long-term-api-stability, integration-governance, metR-asign-power, power-adobe-sign-services, api-gateway, http-endpoint, web-client, integration-service, request-header-validation, content-type-check, api-request-formatting, json-payload-handling, http-protocol-processing, contract-signing-workflow, revenue-lifecycle-management, enterprise-software, digital-contract-execution, web-service-interaction, api-communication-environment, backend-service-integration, adobe-sign-services-api, resource-relationship-api, jsonapi-includes, rest-resource-model, reference-expansion-framework, api-data-linking-engine, resource-inclusion, relationship-resolution, top-level-resource-mapping, comma-delimited-parsing, linked-resource-expansion, request-include-optimization, enterprise-software, revenue-lifecycle-management, digital-signature-ecosystem, api-data-modeling, integration-architecture, structured-resource-environment, metr-asign-power, power-adobe-sign-services, server-cache-engine, api-gateway-cache-layer, web-runtime-services, performance-optimization-module, server-side-caching, cache-strategy-configuration, query-parameter-handling, request-level-cache-control, response-optimization, runtime-cache-evaluation, enterprise-software, revenue-lifecycle-management, api-performance-context, digital-contract-execution, web-service-workloads, backend-optimization-environment, adobe-sign-services-api, salesforce-integration-api, openapi-3-specification, e-signature-service, agreement-processing-api, oauth2-authentication-endpoint, error-handling-framework, response-validation, http-status-interpretation, request-schema-validation, signature-request-workflow, recipient-mapping-process, enterprise-software, revenue-lifecycle-management, digital-signature-automation, cloud-integration-environment, api-error-observability, salesforce-oauth-environment"/><meta name="indexterms" content="adobe-sign-services-api, rest-api-framework, jsonapi-endpoints, e-signature-platform, agreement-workflow-api, adobe-sign-integration-services, api-request-handling, resource-model-definition, signature-orchestration, authentication-flow, agreement-transaction-processing, restful-communication, enterprise-software, revenue-lifecycle-management, digital-contract-execution, cloud-integration-environment, api-driven-operations, e-signature-ecosystem, adobe-sign-services-api, json-api, rest-api, microservice-architecture, cors-support, web-api-framework, api-integration, authentication-workflow, request-routing, response-handling, resource-modeling, error-handling, enterprise-software, revenue-lifecycle-management, digital-signing, application-integration, web-environment, cloud-services, adobe-sign-services-api, salesforce-rest-endpoint, apex-rest-service, echosign-integration, agreement-service-endpoint, web-api-endpoint, endpoint-configuration, request-dispatching, signature-workflow-routing, agreement-processing, url-path-resolution, integration-binding, enterprise-software, revenue-lifecycle-management, digital-signature-operations, salesforce-environment, cloud-integration, external-application-invocation, adobe-sign-services-api, api-versioning-system, version-controlled-endpoints, compatibility-framework, api-lifecycle-management, service-version-controller, backward-compatibility, breaking-change-isolation, endpoint-version-mapping, api-change-management, feature-versioning-process, structured-api-evolution, enterprise-software, revenue-lifecycle-management, digital-signature-services, cloud-platform-versioning, long-term-api-stability, integration-governance, metR-asign-power, power-adobe-sign-services, api-gateway, http-endpoint, web-client, integration-service, request-header-validation, content-type-check, api-request-formatting, json-payload-handling, http-protocol-processing, contract-signing-workflow, revenue-lifecycle-management, enterprise-software, digital-contract-execution, web-service-interaction, api-communication-environment, backend-service-integration, adobe-sign-services-api, resource-relationship-api, jsonapi-includes, rest-resource-model, reference-expansion-framework, api-data-linking-engine, resource-inclusion, relationship-resolution, top-level-resource-mapping, comma-delimited-parsing, linked-resource-expansion, request-include-optimization, enterprise-software, revenue-lifecycle-management, digital-signature-ecosystem, api-data-modeling, integration-architecture, structured-resource-environment, metr-asign-power, power-adobe-sign-services, server-cache-engine, api-gateway-cache-layer, web-runtime-services, performance-optimization-module, server-side-caching, cache-strategy-configuration, query-parameter-handling, request-level-cache-control, response-optimization, runtime-cache-evaluation, enterprise-software, revenue-lifecycle-management, api-performance-context, digital-contract-execution, web-service-workloads, backend-optimization-environment, adobe-sign-services-api, salesforce-integration-api, openapi-3-specification, e-signature-service, agreement-processing-api, oauth2-authentication-endpoint, error-handling-framework, response-validation, http-status-interpretation, request-schema-validation, signature-request-workflow, recipient-mapping-process, enterprise-software, revenue-lifecycle-management, digital-signature-automation, cloud-integration-environment, api-error-observability, salesforce-oauth-environment"/><meta name="indexterms" content="adobe-sign-services-api, rest-api-framework, jsonapi-endpoints, e-signature-platform, agreement-workflow-api, adobe-sign-integration-services, api-request-handling, resource-model-definition, signature-orchestration, authentication-flow, agreement-transaction-processing, restful-communication, enterprise-software, revenue-lifecycle-management, digital-contract-execution, cloud-integration-environment, api-driven-operations, e-signature-ecosystem, adobe-sign-services-api, json-api, rest-api, microservice-architecture, cors-support, web-api-framework, api-integration, authentication-workflow, request-routing, response-handling, resource-modeling, error-handling, enterprise-software, revenue-lifecycle-management, digital-signing, application-integration, web-environment, cloud-services, adobe-sign-services-api, salesforce-rest-endpoint, apex-rest-service, echosign-integration, agreement-service-endpoint, web-api-endpoint, endpoint-configuration, request-dispatching, signature-workflow-routing, agreement-processing, url-path-resolution, integration-binding, enterprise-software, revenue-lifecycle-management, digital-signature-operations, salesforce-environment, cloud-integration, external-application-invocation, adobe-sign-services-api, api-versioning-system, version-controlled-endpoints, compatibility-framework, api-lifecycle-management, service-version-controller, backward-compatibility, breaking-change-isolation, endpoint-version-mapping, api-change-management, feature-versioning-process, structured-api-evolution, enterprise-software, revenue-lifecycle-management, digital-signature-services, cloud-platform-versioning, long-term-api-stability, integration-governance, metR-asign-power, power-adobe-sign-services, api-gateway, http-endpoint, web-client, integration-service, request-header-validation, content-type-check, api-request-formatting, json-payload-handling, http-protocol-processing, contract-signing-workflow, revenue-lifecycle-management, enterprise-software, digital-contract-execution, web-service-interaction, api-communication-environment, backend-service-integration, adobe-sign-services-api, resource-relationship-api, jsonapi-includes, rest-resource-model, reference-expansion-framework, api-data-linking-engine, resource-inclusion, relationship-resolution, top-level-resource-mapping, comma-delimited-parsing, linked-resource-expansion, request-include-optimization, enterprise-software, revenue-lifecycle-management, digital-signature-ecosystem, api-data-modeling, integration-architecture, structured-resource-environment, metr-asign-power, power-adobe-sign-services, server-cache-engine, api-gateway-cache-layer, web-runtime-services, performance-optimization-module, server-side-caching, cache-strategy-configuration, query-parameter-handling, request-level-cache-control, response-optimization, runtime-cache-evaluation, enterprise-software, revenue-lifecycle-management, api-performance-context, digital-contract-execution, web-service-workloads, backend-optimization-environment, adobe-sign-services-api, salesforce-integration-api, openapi-3-specification, e-signature-service, agreement-processing-api, oauth2-authentication-endpoint, error-handling-framework, response-validation, http-status-interpretation, request-schema-validation, signature-request-workflow, recipient-mapping-process, enterprise-software, revenue-lifecycle-management, digital-signature-automation, cloud-integration-environment, api-error-observability, salesforce-oauth-environment"/><meta name="DC.relation" content="../adobe_sign_services_for_r_154938248/154938248.html"/><meta name="DC.audience.type" content="role"/><meta name="prodname" content="metR-Asign-Power"/><meta name="platform" content="web"/><meta name="DC.creator" content="Pallavi"/><meta name="DC.date.created" content="2025-11-24+05:30"/><meta name="DC.date.modified" content="2025-11-24"/><meta name="title" content="Adobe Sign Services REST API"/><meta name="shortdesc" content="Introduces the Adobe Sign Services REST API used to integrate eSignature workflows into enterprise applications."/><meta name="language" content="en-GB"/><meta name="version" content="1.0.0"/><meta name="docStage" content="approved"/><meta name="access.role" content="internal"/><meta name="data.classification" content="non-sensitive"/><meta name="retention.policy" content="standard-36m"/><meta name="entities" content="adobe sign services; rest api; agreements; signature workflows; integration endpoints; authentication mechanisms"/><meta name="taxonomy" content="domain:enterprise-software;usecase:api-overview;industry:revenue life-cycle-management"/><meta name="tags" content="adobe sign, rest api, agreements, e-signature, integration, enterprise workflows"/><meta name="usecase" content="introduce-api-overview"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="c238A8A3-BDF2-11F0-5288-09173F13E4C5"/><meta name="DC.language" content="en"/><title>Adobe Sign Services REST API</title><!--  Generated with Oxygen version 27.1, build number 2025063009.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="c238A8A3-BDF2-11F0-5288-09173F13E4C5-d1000e482"/><meta name="wh-source-relpath" content="adobe_sign_services_rest__143887979/143887979.dita"/><meta name="wh-out-relpath" content="adobe_sign_services_rest__143887979/143887979.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025063009"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025063009"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20261013101859"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025063009"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20261013101859"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025063009"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025063009"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025063009"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/notes.css?buildId=2025063009"/></head>
+
+    <body class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Adobe Sign Services No conditions</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-bs-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-bs-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c2375905-BDF2-11F0-2524-09173F13E4C5-d1000e11-mi" data-tocid="c2375905-BDF2-11F0-2524-09173F13E4C5-d1000e11" data-state="not-ready" class=" topicref " data-id="c2375905-BDF2-11F0-2524-09173F13E4C5"><span class="title"><a href="../about_adobe_sign_services_195698385/195698385.html">About Adobe Sign Services</a></span></span></li><li role="menuitem"><span id="c240E982-BDF2-11F0-9844-09173F13E4C5-d1000e28-mi" data-tocid="c240E982-BDF2-11F0-9844-09173F13E4C5-d1000e28" data-state="leaf" class=" topicref " data-id="c240E982-BDF2-11F0-9844-09173F13E4C5"><span class="title"><a href="../what_s_new_in_adobe_sign_ser_193698279/193698279.html">What's New in Adobe Sign Services Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c2386EF6-BDF2-11F0-2107-09173F13E4C5-d1000e37-mi" data-tocid="c2386EF6-BDF2-11F0-2107-09173F13E4C5-d1000e37" data-state="not-ready" class=" topicref " data-id="c2386EF6-BDF2-11F0-2107-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_for_a_195696054/195696054.html">Adobe Sign Services for Administrators</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c238951F-BDF2-11F0-1034-09173F13E4C5-d1000e344-mi" data-tocid="c238951F-BDF2-11F0-1034-09173F13E4C5-d1000e344" data-state="not-ready" class=" topicref " data-id="c238951F-BDF2-11F0-1034-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_for_u_154938243/154938243.html">Adobe Sign Services for Users</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458-mi" data-tocid="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458" data-state="not-ready" class=" topicref " data-id="c238826B-BDF2-11F0-1546-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_for_r_154938248/154938248.html">Adobe Sign Services for REST API Developers</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c2384BA3-BDF2-11F0-9816-09173F13E4C5-d1000e547-mi" data-tocid="c2384BA3-BDF2-11F0-9816-09173F13E4C5-d1000e547" data-state="not-ready" class=" topicref " data-id="c2384BA3-BDF2-11F0-9816-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_featu_169280990/169280990.html">Adobe Sign Services Features by Release</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c23DA64C-BDF2-11F0-8390-09173F13E4C5-d1000e564-mi" data-tocid="c23DA64C-BDF2-11F0-8390-09173F13E4C5-d1000e564" data-state="not-ready" class=" topicref " data-id="c23DA64C-BDF2-11F0-8390-09173F13E4C5"><span class="title"><a href="../Power_customer_community_231214789/231214789.html">Power Customer Community &amp; Learning Center Resources</a></span></span></li></ul></nav>
+                <div class=" wh_indexterms_link "><a href="../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="c238826B-BDF2-11F0-1546-09173F13E4C5"><div class="title"><a href="../adobe_sign_services_for_r_154938248/154938248.html">Adobe Sign Services for REST API Developers</a></div></div></li><li class="active"><div class="topicref" data-id="c238A8A3-BDF2-11F0-5288-09173F13E4C5"><div class="title"><a href="../adobe_sign_services_rest__143887979/143887979.html">Adobe Sign Services REST API</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458" class="topicref" data-id="c238826B-BDF2-11F0-1546-09173F13E4C5" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458-link" class="wh-expand-btn"></span><div class="title"><a href="../adobe_sign_services_for_r_154938248/154938248.html" id="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458-link">Adobe Sign Services for REST API Developers</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="c237979E-BDF2-11F0-8854-09173F13E4C5-d1000e466" class="topicref" data-id="c237979E-BDF2-11F0-8854-09173F13E4C5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../about_rest_api_guide_vspr_143887969/143887969.html" id="c237979E-BDF2-11F0-8854-09173F13E4C5-d1000e466-link">About REST API Guide</a></div></div></li><li role="treeitem"><div data-tocid="c240FE5D-BDF2-11F0-1334-09173F13E4C5-d1000e474" class="topicref" data-id="c240FE5D-BDF2-11F0-1334-09173F13E4C5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../what_s_new_in_rest_api_guide_143887975/143887975.html" id="c240FE5D-BDF2-11F0-1334-09173F13E4C5-d1000e474-link">What's New in REST API Guide</a></div></div></li><li role="treeitem" class="active"><div data-tocid="c238A8A3-BDF2-11F0-5288-09173F13E4C5-d1000e482" class="topicref" data-id="c238A8A3-BDF2-11F0-5288-09173F13E4C5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../adobe_sign_services_rest__143887979/143887979.html" id="c238A8A3-BDF2-11F0-5288-09173F13E4C5-d1000e482-link">Adobe Sign Services REST API</a></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="" role="article" aria-labelledby="ariaid-title1"><article class="nested0" aria-labelledby="ariaid-title1" id="c238A8A3-BDF2-11F0-5288-09173F13E4C5">
+   <h1 class="- topic/title title topictitle1" id="ariaid-title1">Adobe Sign Services REST API</h1>
+   
+   
+   <div class="- topic/body concept/conbody body conbody"></div>
+<article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title2" xml:lang="en" lang="en" id="c238CDC5-BDF2-11F0-1022-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title2">Basics</h2>
+   
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">The Adobe Sign Services API follows a microservice architecture that enables
+            <span class="+ topic/ph ui-d/uicontrol ph uicontrol">Adobe Sign</span> into any part of an application and is built on the
+            <a class="- topic/xref xref" href="https://jsonapi.org/" target="_blank" rel="external noopener">
+            <u class="+ topic/ph hi-d/u ph u">JSON API</u>
+         </a> specification, follows predictable <a class="- topic/xref xref" href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="external noopener">
+            <u class="+ topic/ph hi-d/u ph u">REST</u>
+         </a> URLs, and supports <a class="- topic/xref xref" href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external noopener">
+            <u class="+ topic/ph hi-d/u ph u">cross-origin resource sharing</u>
+         </a>.</p>
+   </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title3" xml:lang="en" lang="en" id="c239055E-BDF2-11F0-1788-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title3">Endpoint</h2>
+   
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">The Adobe Sign Services API is installed with the Adobe Sign managed package and can be exposed to external applications via a Salesforce site or community. </p>
+      <div class="- topic/p p">
+         <div class="table-container"><table class="- topic/table table" data-cols="1"><caption></caption><colgroup><col/></colgroup><tbody class="- topic/tbody tbody">
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0">
+                        <p class="- topic/p p">
+                           <code class="+ topic/ph pr-d/codeph ph codeph">https://{<a class="- topic/xref xref" href="http://testmanaged--clmauto3.my.salesforce.com" target="_blank" rel="external noopener">
+                                 <u class="+ topic/ph hi-d/u ph u">testmanaged--clmauto3.my.salesforce.com</u>
+                              </a>}/services/apexrest/Apttus_Echosign/echosignIntegration/v1</code>
+                        </p>
+                        <p class="- topic/p p">
+                           <code class="+ topic/ph pr-d/codeph ph codeph">/agreements/:agreementId/sendForESignature</code>
+                        </p>
+                     </td>
+                  </tr>
+               </tbody></table></div>
+      </div>
+      <p class="- topic/p p">You must replace this path <code class="+ topic/ph pr-d/codeph ph codeph">{<a class="- topic/xref xref" href="http://testmanaged--clmauto3.my.salesforce.com" target="_blank" rel="external noopener">
+               <u class="+ topic/ph hi-d/u ph u">testmanaged--clmauto3.my.salesforce.com</u>
+            </a>}</code> with your Salesforce org path.</p>
+   </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title4" xml:lang="en" lang="en" id="c2393E65-BDF2-11F0-5042-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title4">Versions</h2>
+   
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">The Adobe Sign Services API ensures backward compatibility by properly versioning any changes to the APIs. Should changes to the API structure need to be made, it will occur within a new version and older functionality will be preserved.</p>
+   </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title5" xml:lang="en" lang="en" id="c238F342-BDF2-11F0-2895-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title5">Content Type</h2>
+   
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">Requests made to the API must be encoded as <strong class="+ topic/ph hi-d/b ph b">JSON</strong> and contain the header</p>
+      <div class="- topic/p p">
+         <div class="table-container"><table class="- topic/table table" data-cols="1"><caption></caption><colgroup><col/></colgroup><tbody class="- topic/tbody tbody">
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0">
+                        <p class="- topic/p p">
+                           <code class="+ topic/ph pr-d/codeph ph codeph">Content-Type: application/json</code>
+                        </p>
+                     </td>
+                  </tr>
+               </tbody></table></div>
+      </div>
+   </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title6" xml:lang="en" lang="en" id="c2392B6B-BDF2-11F0-1807-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title6">Includes</h2>
+   
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">You can easily include resource relationships on most top-level resources. Multiple includes are defined using comma-delimited values.</p>
+   </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title7" xml:lang="en" lang="en" id="c238E0BF-BDF2-11F0-1348-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title7">Caching</h2>
+   
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">Server side caching is used and can be configured per request using the cacheStrategy query parameter.</p>
+   </div>
+</article><article class="- topic/topic concept/concept topic concept nested1" aria-labelledby="ariaid-title8" xml:lang="en" lang="en" id="c23918DF-BDF2-11F0-2006-09173F13E4C5">
+   <h2 class="- topic/title title topictitle2" id="ariaid-title8">Errors</h2>
+  
+  
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">Any request that returns an error follows a standard format. The Adobe Sign Services API will return an array of errors that contains objects containing the status, title, and data with the error details.</p>
+      <div class="- topic/p p">
+         <div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                  <tr class="- topic/row">
+                     <th class="- topic/entry entry colsep-0 rowsep-0" id="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">
+                           <strong class="+ topic/ph hi-d/b ph b">Code</strong>
+                        </p>
+                     </th>
+                     <th class="- topic/entry entry colsep-0 rowsep-0" id="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">
+                           <strong class="+ topic/ph hi-d/b ph b">Response</strong>
+                        </p>
+                     </th>
+                  </tr>
+               </thead><tbody class="- topic/tbody tbody">
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">200</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">Success</p>
+                     </td>
+                  </tr>
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">400</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">Invalid JSON</p>
+                     </td>
+                  </tr>
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">500</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c23918DF-BDF2-11F0-2006-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">Something went wrong on our end</p>
+                     </td>
+                  </tr>
+               </tbody></table></div>
+      </div>
+      <p class="- topic/p p">openapi: 3.0.0
+info:
+  title: 
+  contact: {}
+  version: '1.0'
+
+paths:
+  '/agreements/:agreementId/sendForESignature':
+    post:
+      tags:
+        - Adobe Sign Rest API
+      summary: sendForESignature
+      description: Send document for eSignature
+      operationId: sendForESignature
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Request'
+            example:
+              Recipients:
+                - ContactId: 0032f00000Qg16AAAR
+                  OrderNumber: 1
+                  RecipientType: Contact
+                  RecipientRole: Signer
+              FileIds:
+                - 0692f000001HdOPAA0
+              TemplateId: a1p2f0000009wHIAAY
+        required: true
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+              example:
+                title: success
+                status: 200
+                data: true
+      deprecated: false
+components:
+  schemas:
+    Request:
+      title: Request
+      required:
+        - Recipients
+        - FileIds
+        - TemplateId
+      type: object
+      properties:
+        Recipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/Recipient'
+          description: ''
+        FileIds:
+          type: array
+          items:
+            type: string
+          description: ''
+        TemplateId:
+          type: string
+      
+    Recipient:
+      title: Recipient
+      required:
+        - OrderNumber
+        - RecipientType
+        - RecipientRole
+      type: object
+      properties:
+        ContactId:
+          type: string
+        UserId:
+          type: string
+        GroupId:
+          type: string
+        LeadId:
+          type: string
+        EmailAddress:
+          type: string
+        OrderNumber:
+          type: integer
+          format: int32
+        RecipientType:
+          type: string
+        RecipientRole:
+          type: string
+        RecipientMessage:
+          type: string
+      
+    Response:
+      title: Response
+      required:
+        - title
+        - status
+        - data
+      type: object
+      properties:
+        title:
+          type: string
+        status:
+          type: integer
+          format: int32
+        data:
+          type: boolean
+      
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'https://test.salesforce.com/services/oauth2/authorize'
+          scopes: {}
+security:
+  - oauth2: []</p>
+   </div>
+</article></article></article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+              	                <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="topic-item"><a href="#c238CDC5-BDF2-11F0-1022-09173F13E4C5" data-tocid="c238CDC5-BDF2-11F0-1022-09173F13E4C5">Basics</a></li><li class="topic-item"><a href="#c239055E-BDF2-11F0-1788-09173F13E4C5" data-tocid="c239055E-BDF2-11F0-1788-09173F13E4C5">Endpoint</a></li><li class="topic-item"><a href="#c2393E65-BDF2-11F0-5042-09173F13E4C5" data-tocid="c2393E65-BDF2-11F0-5042-09173F13E4C5">Versions</a></li><li class="topic-item"><a href="#c238F342-BDF2-11F0-2895-09173F13E4C5" data-tocid="c238F342-BDF2-11F0-2895-09173F13E4C5">Content Type</a></li><li class="topic-item"><a href="#c2392B6B-BDF2-11F0-1807-09173F13E4C5" data-tocid="c2392B6B-BDF2-11F0-1807-09173F13E4C5">Includes</a></li><li class="topic-item"><a href="#c238E0BF-BDF2-11F0-1348-09173F13E4C5" data-tocid="c238E0BF-BDF2-11F0-1348-09173F13E4C5">Caching</a></li><li class="topic-item"><a href="#c23918DF-BDF2-11F0-2006-09173F13E4C5" data-tocid="c23918DF-BDF2-11F0-2006-09173F13E4C5">Errors</a></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div>Generated by <a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+ &lt;oXygen/&gt; XML WebHelp
+ </a></div>
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>

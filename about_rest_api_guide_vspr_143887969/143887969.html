@@ -1,0 +1,228 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" data-whc_version="27.1">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Adobe Sign Services REST API Guide explains the REST APIs provided by Power Adobe Sign integration. Topic Description What's Covered This guide walks the API developers through the complete list of ..."/><meta name="DC.rights.owner" content="(C) Copyright 2026"/><meta name="copyright" content="(C) Copyright 2026"/><meta name="generator" content="DITA-OT"/><meta name="DC.type" content="concept"/><meta name="DC.subject" content="rest-api,api-endpoint,oauth2-client,api-gateway,signed-requests,authenticate-oauth2,call-endpoint,handle-responses,error-handling,rate-limiting,integration-development,backend-services,secure-api,enterprise-software,developer-operations"/><meta name="keywords" content="rest-api, api-endpoint, oauth2-client, api-gateway, signed-requests, authenticate-oauth2, call-endpoint, handle-responses, error-handling, rate-limiting, integration-development, backend-services, secure-api, enterprise-software, developer-operations"/><meta name="indexterms" content="rest-api, api-endpoint, oauth2-client, api-gateway, signed-requests, authenticate-oauth2, call-endpoint, handle-responses, error-handling, rate-limiting, integration-development, backend-services, secure-api, enterprise-software, developer-operations"/><meta name="DC.relation" content="../adobe_sign_services_for_r_154938248/154938248.html"/><meta name="DC.audience.type" content="role"/><meta name="prodname" content="metR-Asign-Power"/><meta name="platform" content="web"/><meta name="DC.creator" content="Pallavi"/><meta name="DC.date.created" content="2025-11-24+05:30"/><meta name="DC.date.modified" content="2025-11-24"/><meta name="title" content="About REST API Guide"/><meta name="shortdesc" content="API guidance for authenticating, calling, and handling Adobe Sign REST endpoints including OAuth2 and error handling patterns."/><meta name="language" content="en-GB"/><meta name="version" content="1.0.0"/><meta name="docStage" content="approved"/><meta name="access.role" content="internal"/><meta name="data.classification" content="non-sensitive"/><meta name="retention.policy" content="standard-36m"/><meta name="entities" content="endpoints;access-token;client-id;api-responses;headers;oauth2-server"/><meta name="taxonomy" content="domain:revenue-lifecycle-management;usecase:rest-api-integration-and-authentication;industry:revenue-life-cycle-management"/><meta name="tags" content="api-guide,rest,oauth2,integration,developer"/><meta name="usecase" content="provide-rest-api-guidance-for-adobe-sign-and-integration"/><meta name="DC.format" content="HTML5"/><meta name="DC.identifier" content="c237979E-BDF2-11F0-8854-09173F13E4C5"/><meta name="DC.language" content="en"/><title>About REST API Guide</title><!--  Generated with Oxygen version 27.1, build number 2025063009.  --><meta name="wh-path2root" content="../"/><meta name="wh-toc-id" content="c237979E-BDF2-11F0-8854-09173F13E4C5-d1000e466"/><meta name="wh-source-relpath" content="about_rest_api_guide_vspr_143887969/143887969.dita"/><meta name="wh-out-relpath" content="about_rest_api_guide_vspr_143887969/143887969.html"/>
+
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/commons.css?buildId=2025063009"/>
+    <link rel="stylesheet" type="text/css" href="../oxygen-webhelp/app/topic.css?buildId=2025063009"/>
+
+    <script src="../oxygen-webhelp/app/options/properties.js?buildId=20261013101859"></script>
+    <script src="../oxygen-webhelp/app/localization/strings.js?buildId=2025063009"></script>
+    <script src="../oxygen-webhelp/app/search/index/keywords.js?buildId=20261013101859"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/commons.js?buildId=2025063009"></script>
+    <script defer="defer" src="../oxygen-webhelp/app/topic.js?buildId=2025063009"></script>
+<link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/oxygen.css?buildId=2025063009"/><link rel="stylesheet" type="text/css" href="../oxygen-webhelp/template/notes.css?buildId=2025063009"/></head>
+
+    <body id="c237979E-BDF2-11F0-8854-09173F13E4C5" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="visually-hidden visually-hidden-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    
+                    <div class=" wh_publication_title "><a href="../index.html"><span class="title">Adobe Sign Services No conditions</span></a></div>
+                    
+                </div>
+                
+                <button type="button" data-bs-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-bs-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button" aria-expanded="false" aria-label="Toggle menu" aria-controls="wh_top_menu_and_indexterms_link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                <nav class=" wh_top_menu " aria-label="Menu Container"><ul role="menubar" aria-label="Menu"><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c2375905-BDF2-11F0-2524-09173F13E4C5-d1000e11-mi" data-tocid="c2375905-BDF2-11F0-2524-09173F13E4C5-d1000e11" data-state="not-ready" class=" topicref " data-id="c2375905-BDF2-11F0-2524-09173F13E4C5"><span class="title"><a href="../about_adobe_sign_services_195698385/195698385.html">About Adobe Sign Services</a></span></span></li><li role="menuitem"><span id="c240E982-BDF2-11F0-9844-09173F13E4C5-d1000e28-mi" data-tocid="c240E982-BDF2-11F0-9844-09173F13E4C5-d1000e28" data-state="leaf" class=" topicref " data-id="c240E982-BDF2-11F0-9844-09173F13E4C5"><span class="title"><a href="../what_s_new_in_adobe_sign_ser_193698279/193698279.html">What's New in Adobe Sign Services Documentation</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c2386EF6-BDF2-11F0-2107-09173F13E4C5-d1000e37-mi" data-tocid="c2386EF6-BDF2-11F0-2107-09173F13E4C5-d1000e37" data-state="not-ready" class=" topicref " data-id="c2386EF6-BDF2-11F0-2107-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_for_a_195696054/195696054.html">Adobe Sign Services for Administrators</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c238951F-BDF2-11F0-1034-09173F13E4C5-d1000e344-mi" data-tocid="c238951F-BDF2-11F0-1034-09173F13E4C5-d1000e344" data-state="not-ready" class=" topicref " data-id="c238951F-BDF2-11F0-1034-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_for_u_154938243/154938243.html">Adobe Sign Services for Users</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458-mi" data-tocid="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458" data-state="not-ready" class=" topicref " data-id="c238826B-BDF2-11F0-1546-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_for_r_154938248/154938248.html">Adobe Sign Services for REST API Developers</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c2384BA3-BDF2-11F0-9816-09173F13E4C5-d1000e547-mi" data-tocid="c2384BA3-BDF2-11F0-9816-09173F13E4C5-d1000e547" data-state="not-ready" class=" topicref " data-id="c2384BA3-BDF2-11F0-9816-09173F13E4C5"><span class="title"><a href="../adobe_sign_services_featu_169280990/169280990.html">Adobe Sign Services Features by Release</a></span></span></li><li role="menuitem" aria-haspopup="true" aria-expanded="false" class="has-children"><span id="c23DA64C-BDF2-11F0-8390-09173F13E4C5-d1000e564-mi" data-tocid="c23DA64C-BDF2-11F0-8390-09173F13E4C5-d1000e564" data-state="not-ready" class=" topicref " data-id="c23DA64C-BDF2-11F0-8390-09173F13E4C5"><span class="title"><a href="../Power_customer_community_231214789/231214789.html">Power Customer Community &amp; Learning Center Resources</a></span></span></li></ul></nav>
+                <div class=" wh_indexterms_link "><a href="../indexTerms.html" title="Index" aria-label="Go to index terms page"><span>Index</span></a></div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="../search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
+            
+            
+            
+        </div>
+        
+        <div class="container-fluid navbar-expand-md" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="../index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="c238826B-BDF2-11F0-1546-09173F13E4C5"><div class="title"><a href="../adobe_sign_services_for_r_154938248/154938248.html">Adobe Sign Services for REST API Developers</a></div></div></li><li class="active"><div class="topicref" data-id="c237979E-BDF2-11F0-8854-09173F13E4C5"><div class="title"><a href="../about_rest_api_guide_vspr_143887969/143887969.html">About REST API Guide</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+	                            <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+		                            <span class="close-toc-icon-container">
+		                                <span class="close-toc-icon"></span>     
+		                            </span>
+		                        </button>
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem" aria-expanded="true"><div data-tocid="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458" class="topicref" data-id="c238826B-BDF2-11F0-1546-09173F13E4C5" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458-link" class="wh-expand-btn"></span><div class="title"><a href="../adobe_sign_services_for_r_154938248/154938248.html" id="c238826B-BDF2-11F0-1546-09173F13E4C5-d1000e458-link">Adobe Sign Services for REST API Developers</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="c237979E-BDF2-11F0-8854-09173F13E4C5-d1000e466" class="topicref" data-id="c237979E-BDF2-11F0-8854-09173F13E4C5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../about_rest_api_guide_vspr_143887969/143887969.html" id="c237979E-BDF2-11F0-8854-09173F13E4C5-d1000e466-link">About REST API Guide</a></div></div></li><li role="treeitem"><div data-tocid="c240FE5D-BDF2-11F0-1334-09173F13E4C5-d1000e474" class="topicref" data-id="c240FE5D-BDF2-11F0-1334-09173F13E4C5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../what_s_new_in_rest_api_guide_143887975/143887975.html" id="c240FE5D-BDF2-11F0-1334-09173F13E4C5-d1000e474-link">What's New in REST API Guide</a></div></div></li><li role="treeitem"><div data-tocid="c238A8A3-BDF2-11F0-5288-09173F13E4C5-d1000e482" class="topicref" data-id="c238A8A3-BDF2-11F0-5288-09173F13E4C5" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="../adobe_sign_services_rest__143887979/143887979.html" id="c238A8A3-BDF2-11F0-5288-09173F13E4C5-d1000e482-link">Adobe Sign Services REST API</a></div></div></li></ul></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article class="- topic/topic concept/concept topic concept" role="article" aria-labelledby="ariaid-title1">
+   <h1 class="- topic/title title topictitle1" id="ariaid-title1">About REST API Guide</h1>
+   
+   <div class="- topic/body concept/conbody body conbody">
+      <p class="- topic/p p">Adobe Sign Services REST API Guide explains the REST APIs provided by Power Adobe Sign
+         integration. </p>
+      <div class="- topic/p p">
+         <div class="table-container"><table class="- topic/table table" data-cols="2"><caption></caption><colgroup><col/><col/></colgroup><thead class="- topic/thead thead">
+                  <tr class="- topic/row">
+                     <th class="- topic/entry entry colsep-0 rowsep-0" id="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">Topic</p>
+                     </th>
+                     <th class="- topic/entry entry colsep-0 rowsep-0" id="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">Description</p>
+                     </th>
+                  </tr>
+               </thead><tbody class="- topic/tbody tbody">
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">What's Covered</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">This guide walks the API developers through the complete list of REST APIs provided by Power Adobe Sign integration.</p>
+                     </td>
+                  </tr>
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">Primary Audience</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">REST API Developer</p>
+                     </td>
+                  </tr>
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">IT Environment</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">Refer to the latest Adobe Sign Services <a class="- topic/xref xref" href="https://documentation.Power.com/display/ESIGN/.Spring+%2721+Release+Notes+vDecember-21" target="_blank" rel="external noopener">
+                              <u class="+ topic/ph hi-d/u ph u">Release Notes</u>
+                           </a> for information on System Requirements and Supported Platforms.</p>
+                     </td>
+                  </tr>
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">Updates</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__2">
+                        <p class="- topic/p p">For a comprehensive list of updates to this guide for each release, refer to the topic.</p>
+                     </td>
+                  </tr>
+                  <tr class="- topic/row">
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__1">
+                        <p class="- topic/p p">Other Resources</p>
+                     </td>
+                     <td class="- topic/entry entry colsep-0 rowsep-0" headers="c237979E-BDF2-11F0-8854-09173F13E4C5__entry__2">
+                        <div class="- topic/p p">
+                           <ul class="- topic/ul ul">
+                              <li class="- topic/li li">
+                                 <em class="+ topic/ph hi-d/i ph i">Adobe Sign Services User Guide</em>: Refer to this guide for information on using Adobe Sign Services.</li>
+                              <li class="- topic/li li">
+                                 <em class="+ topic/ph hi-d/i ph i">Adobe Sign Services Administrator Guide</em>: Refer to this guide for information on setting-up Adobe Sign.</li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody></table></div>
+      </div>
+      <p class="- topic/p p">This guide describes the following API:</p>
+      <ul class="- topic/ul ul">
+         <li class="- topic/li li">
+            <p class="- topic/p p">sendForESignature</p>
+         </li>
+      </ul>
+      <p class="- topic/p p">Before using Adobe Sign Services, you must be familiar with the following:</p>
+      <ul class="- topic/ul ul">
+         <li class="- topic/li li">Basic Salesforce administration</li>
+         <li class="- topic/li li">Salesforce and Power terms and definitions</li>
+      </ul>
+      <p class="- topic/p p">If you are new to Adobe Sign Services, begin here: <a class="- topic/xref xref" href="https://documentation.Power.com/display/DSIGNSPR21/Overview" target="_blank" rel="external noopener">.</a>
+      </p>
+      <p class="- topic/p p">DOC ID: ESIGNSPR21RESTAPI20210302</p>
+   </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div>Generated by <a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
+ &lt;oXygen/&gt; XML WebHelp
+ </a></div>
+  </div>
+</footer>
+        
+        <button id="go2top" class="d-print-none" title="Go to top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </button>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+    </body>
+</html>
